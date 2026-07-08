@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist das 21 Alavancas de Conversão para Clínicas de Estética</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --surface: #ffffff;
+    --border: #e8e8e8;
+    --accent: #8b5cf6;
+    --accent-glow: rgba(139, 92, 246, 0.12);
+    --danger: #ef4444;
+    --success: #10b981;
+    --warm: #faf9f7;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--warm);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 48px 0 36px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 span { color: var(--accent); }
+
+  .hero .sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 440px;
+    margin: 0 auto 24px;
+    line-height: 1.5;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45); }
+  .cta-btn:active { transform: translateY(0); }
+
+  .cta-hint {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+  }
+
+  .section p, .section li {
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  /* ── PAIN POINTS ── */
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .pain-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pain-item .icon { font-size: 18px; flex-shrink: 0; }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+
+  .inside-list li {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .inside-list li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── OFFER STACK ── */
+  .offer-card {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+  }
+
+  .offer-card .price-old {
+    text-decoration: line-through;
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .offer-card .price {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+
+  .offer-card .price sup { font-size: 22px; font-weight: 600; }
+
+  .offer-card .pix-badge {
+    display: inline-block;
+    background: #f0f9f4;
+    color: #0f7a3e;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 99px;
+    margin: 6px 0 16px;
+  }
+
+  .bump-box {
+    background: #faf9ff;
+    border: 1px dashed var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-top: 14px;
+    font-size: 14px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bump-box .bump-price {
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+    font-size: 15px;
+  }
+
+  /* ── GUARANTEE ── */
+  .guarantee-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .guarantee-box .shield {
+    font-size: 32px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .guarantee-box h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .guarantee-box p {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* ── WHO ── */
+  .who-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .who-box .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  /* ── FAQ ── */
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-item .q {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .faq-item .a {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  /* ── FOOTER CTA ── */
+  .footer-cta {
+    padding: 36px 0 48px;
+    text-align: center;
+  }
+
+  .footer-cta h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .footer-cta .sub {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 480px) {
+    .hero { padding: 36px 0 28px; }
+    .hero h1 { font-size: 24px; }
+    .hero .sub { font-size: 15px; }
+    .offer-card .price { font-size: 36px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-badge">NOVO • GRATUITO COM TRIPWIRE</div>
+    <h1>As <span>21 alavancas</span> que fazem uma clínica de estética faturar mais — sem gastar 1 real a mais em anúncio</h1>
+    <p class="sub">Um checklist de conversão que diagnostica exatamente onde sua clínica está perdendo cliente — e o que fazer em cada ponto do funil.</p>
+    <a href="https://wa.me/5551999999999?text=Quero%20o%20Checklist%2021%20Alavancas" class="cta-btn" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      Quero o Checklist
+    </a>
+    <span class="cta-hint">Você será redirecionado para o WhatsApp. Entrega em menos de 1 minuto.</span>
+  </section>
+
+  <!-- ═══ DOR ═══ -->
+  <section class="section">
+    <h2>Isso está acontecendo na sua clínica?</h2>
+    <div class="pain-grid">
+      <div class="pain-item"><span class="icon">📉</span> Agendamentos caíram e você não sabe por quê</div>
+      <div class="pain-item"><span class="icon">💸</span> Gasta com anúncio, mas o telefone não toca</div>
+      <div class="pain-item"><span class="icon">👻</span> Cliente some depois do orçamento e nunca mais volta</div>
+      <div class="pain-item"><span class="icon">🔄</span> Tá sempre correndo atrás de cliente novo — e exausta</div>
+    </div>
+  </section>
+
+  <!-- ═══ O QUE É ═══ -->
+  <section class="section">
+    <h2>O Checklist resolve isso em 21 pontos</h2>
+    <p style="margin-bottom:16px;">Não é curso. Não é planilha genérica. É um <strong>diagnóstico de conversão</strong> — ponto por ponto — baseado no que funciona em clínicas reais.</p>
+    <ul class="inside-list">
+      <li>Os 5 pontos onde o WhatsApp perde lead (e como consertar)</li>
+      <li>O que sua Bio do Instagram precisa dizer para converter visita em agendamento</li>
+      <li>O erro nº 1 dos anúncios de estética — que queima 40% do orçamento</li>
+      <li>A sequência de follow-up que recupera a cliente que sumiu</li>
+      <li>O script de orçamento que fecha 3× mais (testado em clínica real)</li>
+    </ul>
+  </section>
+
+  <!-- ═══ OFERTA + STACK ═══ -->
+  <section class="section">
+    <h2>A oferta</h2>
+    <div class="offer-card">
+      <div class="price-old">R$ 47</div>
+      <div class="price"><sup>R$</sup>27</div>
+      <div class="pix-badge">💠 à vista no Pix</div>
+      <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">Checklist das 21 Alavancas de Conversão para Clínicas de Estética — PDF interativo, entrega instantânea via WhatsApp.</p>
+
+      <a href="https://wa.me/5551999999999?text=Quero%20o%20Checklist%2021%20Alavancas" class="cta-btn" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+        Pegar o Checklist
+      </a>
+
+      <div class="bump-box">
+        <span style="font-size:20px;">🧮</span>
+        <span style="flex:1;"><strong>+ Calculadora de ROAS para Estética</strong><br><span style="color:var(--muted);">Descubra em 10 segundos se seus anúncios estão dando lucro ou prejuízo.</span></span>
+        <span class="bump-price">+R$17</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GARANTIA ═══ -->
+  <section class="section">
+    <h2>Zero risco</h2>
+    <div class="guarantee-box">
+      <div class="shield">🛡️</div>
+      <div>
+        <h3>30 dias de garantia incondicional</h3>
+        <p>Não curtiu? Me manda um WhatsApp e devolvo seu dinheiro no Pix em até 24 horas. Sem perguntas, sem letra miúda. Os 7 dias do CDC já são lei — eu te dou 30 porque confio no material.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ QUEM FEZ ═══ -->
+  <section class="section">
+    <h2>Quem montou isso</h2>
+    <div class="who-box">
+      <div class="avatar">📊</div>
+      <div>
+        <strong style="font-size:15px;">Diogo Caspary</strong>
+        <p style="font-size:13px; color:var(--muted); margin-top:2px;">Gestor de tráfego para clínicas de estética. Já gerenciei campanhas que trouxeram mais de <strong>X agendamentos/mês</strong> para clínicas reais com orçamento enxuto. Esse checklist é o que eu aplico antes de gastar 1 real em anúncio de qualquer cliente novo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section">
+    <h2>Dúvidas rápidas</h2>
+    <div class="faq-item">
+      <div class="q">É só para clínicas de estética?</div>
+      <div class="a">Sim. O checklist foi montado especificamente para o funil de aquisição de clínica de estética — Instagram → WhatsApp → agendamento → retorno. Se você tem outro negócio, os princípios podem servir, mas os exemplos e scripts são do nicho.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Como recebo?</div>
+      <div class="a">Assim que o Pix for confirmado, o PDF chega automaticamente no seu WhatsApp. Em menos de 1 minuto.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Preciso ter anúncio rodando?</div>
+      <div class="a">Não. Vários pontos do checklist valem para o orgânico (Bio do Instagram, script de orçamento, follow-up). Mas se você roda anúncio, vai descobrir onde está jogando dinheiro fora.</div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER CTA ═══ -->
+  <section class="footer-cta">
+    <h2>Chega de adivinhar</h2>
+    <p class="sub">Descubra em 21 pontos o que está travando o faturamento da sua clínica. R$27 — o que custa menos que 1 clique em anúncio mal configurado.</p>
+    <a href="https://wa.me/5551999999999?text=Quero%20o%20Checklist%2021%20Alavancas" class="cta-btn" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+      Quero o Checklist Agora
+    </a>
+    <span class="cta-hint">Pix • Entrega instantânea no WhatsApp • 30 dias de garantia</span>
+  </section>
+
+</div>
+</body>
+</html>
